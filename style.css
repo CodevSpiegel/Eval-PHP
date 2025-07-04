@@ -1,0 +1,30 @@
+*,
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 4px 8px;
+}
+
