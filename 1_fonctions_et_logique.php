@@ -1,5 +1,4 @@
 <?php
-
 $lecteurs = [
   [ 'prenom' => 'Aline',   'livres_empruntes'  => 12 ],
   [ 'prenom' => 'Brahim',  'livres_empruntes'  => 5 ],
@@ -14,13 +13,31 @@ $lecteurs = [
   [ 'prenom' => 'Karima',  'livres_empruntes'  => 11 ],
   [ 'prenom' => 'Luc',     'livres_empruntes'  => 3 ],
 ];
+?>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h2>Exercice 1.1</h2>
+        <p>La moyenne de livres empruntés est de <b><?= calculMoyenneEmprunts($lecteurs); ?></b></p>
+        <h2>Exercice 1.2</h2>
+        <div><?= var_dump(trierLecteurs($lecteurs)); ?></div>
+        <h2>Exercice 1.3</h2>
+        <div><?= var_dump(lecteursFrequents($lecteurs)); ?></div>
+    </div>
+</body>
+</html>
 
+<?php
 // =============================== //
 // Exercice 1.1
-$calculMoyenne = calculMoyenneEmprunts($lecteurs);
-echo "La moyenne de livres empruntés est de <b>$calculMoyenne</b>";
-
 function calculMoyenneEmprunts(array $lecteurs): float {
 
     $totalLivres = 0;
@@ -32,11 +49,8 @@ function calculMoyenneEmprunts(array $lecteurs): float {
     return round($result, 2);
 }
 
-
 // =============================== //
 // Exercice 1.2
-var_dump(trierLecteurs($lecteurs));
-
 function trierLecteurs(array $lecteurs): array {
     usort($lecteurs, function($a, $b) {
         if ($a['livres_empruntes'] < $b['livres_empruntes']) {
@@ -50,11 +64,8 @@ function trierLecteurs(array $lecteurs): array {
     return $lecteurs;
 }
 
-
 // =============================== //
 // Exercice 1.3
-var_dump(lecteursFrequents($lecteurs));
-
 function lecteursFrequents(array $lecteurs): array
 {
     $lecteursFrequents = [];
@@ -67,6 +78,8 @@ function lecteursFrequents(array $lecteurs): array
 
     return $lecteursFrequents;
 }
+
+?>
 
 
 
